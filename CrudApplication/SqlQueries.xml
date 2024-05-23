@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Queries>
+	<AddInformation>
+		<![CDATA[
+			INSERT INTO crudoperation.crudapplication(UserName, EmailID, Mobile, Salary, Gender) Values (@UserName, @EmailID, @Mobile, @Salary, @Gender);
+		]]>
+	</AddInformation>
+	<ReadAllInformation>
+		<![CDATA[
+			SELECT * FROM crudoperation.crudapplication WHERE IsActive=1;
+		]]>
+	</ReadAllInformation>
+	<UpdateAllInformationById>
+		<![CDATA[
+			UPDATE crudoperation.crudapplication SET UserName=@UserName, EmailID=@EmailID, Mobile=@Mobile, Salary=@Salary, Gender=@Gender WHERE UserID=@UserID;
+		]]>
+	</UpdateAllInformationById>
+	<DeleteInformationById>
+		<![CDATA[
+			UPDATE crudoperation.crudapplication SET IsActive=0 WHERE UserId=@UserId; 
+		]]>
+	</DeleteInformationById>
+	<GetDeleteReadAllInformation>
+		<![CDATA[
+			SELECT * FROM crudoperation.crudapplication WHERE IsActive=0;
+		]]>
+	</GetDeleteReadAllInformation>
+	<DeleteAllInformation>
+		<![CDATA[
+			Delete FROM crudoperation.crudapplication WHERE IsActive=0;
+		]]>
+	</DeleteAllInformation>
+	<ReadInformationById>
+		<![CDATA[
+			SELECT * FROM crudoperation.crudapplication WHERE UserID=@UserID AND IsActive=1;
+		]]>
+	</ReadInformationById>
+	<UpdateOneInformationById>
+		<![CDATA[
+			UPDATE crudoperation.crudapplication SET Salary=@Salary WHERE UserId=@UserId; 
+		]]>
+	</UpdateOneInformationById>
+</Queries>
